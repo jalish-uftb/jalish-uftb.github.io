@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Md. Jalish Mahamud – IoT, Embedded Systems & Machine Learning</title>
+<meta name="description" content="Portfolio of Md. Jalish Mahamud, IoT and Robotics Engineering graduate working on embedded systems, machine learning and explainable AI.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EDF1F6; --panel:#FFFFFF; --ink:#0F1D44; --muted:#4D5B7C;
+  --line:#C9D2E0; --signal:#D83A26; --signal-soft:#FBE6E2; --teal:#0B7F86;
+  --display:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;
+  --body:'IBM Plex Sans','Segoe UI',system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--paper:#0C1530; --panel:#14204A; --ink:#EAF0FF; --muted:#A5B2D3; --line:#2A3A6B; --signal:#FF6B55; --signal-soft:#3A2330; --teal:#4FD1D9}
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--paper);color:var(--ink);font:400 1.0625rem/1.65 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--signal);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--display);line-height:1.1;letter-spacing:-.02em}
+
+/* nav */
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:16px}
+nav b{font-family:var(--display);font-size:1.1rem}
+nav ul{display:flex;gap:20px;list-style:none;padding:0;overflow-x:auto}
+nav li a{text-decoration:none;color:var(--muted);font-size:.95rem;font-weight:500;white-space:nowrap}
+nav li a:hover{color:var(--signal)}
+
+/* hero */
+.hero{padding:64px 0 0}
+.hero-grid{display:grid;grid-template-columns:1fr 220px;gap:40px;align-items:center}
+.hero h1{font-size:clamp(2.8rem,8.5vw,6rem);font-weight:800}
+.hero .role{margin-top:18px;font-size:1.25rem;color:var(--muted);max-width:34ch}
+.hero .role strong{color:var(--ink);font-weight:600}
+.photo{width:220px;height:260px;border-radius:110px 110px 16px 16px;object-fit:cover;border:3px solid var(--ink);background:var(--panel)}
+.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-block;padding:11px 20px;border-radius:999px;border:2px solid var(--ink);text-decoration:none;font-weight:600;font-size:.98rem;transition:background .15s,color .15s}
+.btn.primary{background:var(--ink);color:var(--paper)}
+.btn:hover{background:var(--signal);border-color:var(--signal);color:#fff}
+.trace{display:block;width:100%;height:120px;margin-top:40px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:
+  linear-gradient(var(--line) 1px,transparent 1px) 0 0/100% 24px,
+  linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/24px 100%;
+  background-blend-mode:normal}
+.trace-cap{display:flex;justify-content:space-between;font-size:.85rem;color:var(--muted);padding:8px 0 0}
+
+/* sections */
+section{padding:84px 0 0}
+h2{font-size:clamp(1.9rem,4vw,2.7rem);margin-bottom:28px;font-weight:700}
+.lead{font-size:1.2rem;max-width:62ch}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-top:36px}
+.fact{border-left:4px solid var(--signal);padding-left:14px}
+.fact b{display:block;font-family:var(--display);font-size:1.5rem}
+.fact span{color:var(--muted);font-size:.95rem}
+
+/* projects */
+.proj{border-top:1px solid var(--line)}
+.proj:last-child{border-bottom:1px solid var(--line)}
+.proj summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr auto;gap:6px 20px;padding:22px 4px;align-items:baseline}
+.proj summary::-webkit-details-marker{display:none}
+.proj h3{font-size:1.45rem;font-weight:700}
+.proj .yr{color:var(--muted);font-weight:500}
+.proj .stack{grid-column:1/-1;color:var(--teal);font-size:.95rem;font-weight:500}
+.proj summary::after{content:"+";grid-column:2;grid-row:1;justify-self:end;font:600 1.6rem var(--display);color:var(--signal);display:none}
+.proj summary .yr{grid-column:2;grid-row:1}
+.proj summary:hover h3{color:var(--signal)}
+.proj .body{padding:0 4px 26px;max-width:72ch}
+.proj .body p{margin-bottom:10px}
+.proj .body ul{padding-left:20px}
+.proj .body li{margin-bottom:6px}
+.proj[open] summary h3{color:var(--signal)}
+.tag{display:inline-block;margin:0 8px 8px 0;padding:3px 12px;border-radius:999px;background:var(--signal-soft);color:var(--signal);font-size:.85rem;font-weight:600}
+.hint{color:var(--muted);font-size:.95rem;margin:-14px 0 20px}
+
+/* publications */
+.pub{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin-bottom:14px}
+.pub .st{display:inline-block;margin-bottom:8px;font-size:.85rem;font-weight:600;color:var(--teal);border:1.5px solid var(--teal);border-radius:999px;padding:1px 12px}
+.pub h3{font-size:1.2rem;font-weight:700;margin-bottom:6px}
+.pub p{color:var(--muted);font-size:.98rem}
+.pub p b{color:var(--ink)}
+.pub a{color:var(--signal);font-weight:600}
+.sub{font-size:1.05rem;font-family:var(--display);font-weight:700;margin:26px 0 12px;color:var(--muted)}
+
+/* two-col lists */
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:36px}
+.row{padding:14px 0;border-top:1px solid var(--line)}
+.row b{display:block;font-weight:600}
+.row span{color:var(--muted);font-size:.97rem}
+.skills dt{font-family:var(--display);font-weight:700;margin-top:18px}
+.skills dd{color:var(--muted)}
+
+/* contact */
+.contact{margin:84px 0 0;padding:64px 0;background:var(--ink);color:var(--paper)}
+.contact h2{color:var(--paper);margin-bottom:12px}
+.contact p{max-width:52ch;opacity:.85}
+.contact .links .btn{border-color:var(--paper);color:var(--paper)}
+.contact .links .btn.primary{background:var(--signal);border-color:var(--signal);color:#fff}
+.contact .links .btn:hover{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+footer{padding:22px 0;text-align:center;font-size:.9rem;color:var(--muted)}
+
+@media (max-width:760px){
+  .hero-grid{grid-template-columns:1fr}
+  .photo{order:-1;width:150px;height:180px;border-radius:75px 75px 12px 12px}
+  nav b{display:none}
+  section{padding-top:64px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <b>Jalish Mahamud</b>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="hero-grid">
+    <div>
+      <h1>Md. Jalish Mahamud</h1>
+      <p class="role"><strong>IoT and robotics engineer</strong> building wearable sensors, smart assistants and explainable AI that people can trust.</p>
+      <div class="links">
+        <a class="btn primary" href="#projects">See my projects</a>
+        <a class="btn" href="CV_of_MD_JALISH_MAHAMUD.pdf">Download CV</a>
+        <a class="btn" href="https://github.com/jalish-uftb">GitHub</a>
+      </div>
+    </div>
+    <!-- Put your photo in the same folder and name it photo.jpg -->
+    <img class="photo" src="photo.jpg" alt="Portrait of Md. Jalish Mahamud" onerror="this.style.display='none'">
+  </div>
+  <canvas class="trace" id="trace" aria-hidden="true"></canvas>
+  <div class="trace-cap"><span>Live heartbeat trace, the kind of signal my Glove Z wearable reads</span><span>ECG</span></div>
+</div></header>
+
+<main>
+<section id="about"><div class="wrap">
+  <h2>About</h2>
+  <p class="lead">I recently graduated in Internet of Things and Robotics Engineering. I work across the whole stack of a connected device: sensors and microcontrollers, cloud and backend, machine learning, and the mobile app people actually touch. I like projects where a working prototype and a published paper come out of the same idea.</p>
+  <div class="facts">
+    <div class="fact"><b>3.45 / 4.00</b><span>CGPA, B.Sc. Engineering, UFTB</span></div>
+    <div class="fact"><b>3 papers</b><span>1 journal, 2 conference</span></div>
+    <div class="fact"><b>Dean’s List</b><span>Level 4, Terms 1 and 2</span></div>
+    <div class="fact"><b>96.8%</b><span>Test accuracy, Glove Z classifier</span></div>
+  </div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <h2>Projects</h2>
+  <p class="hint">Select a project to read more.</p>
+
+  <details class="proj" open>
+    <summary><h3>Hear2Learn</h3><span class="yr">2026</span><span class="stack">Python, Flask, Flutter, Firebase, NLP, Speech Recognition</span></summary>
+    <div class="body">
+      <p>A real-time captioning assistant that helps deaf and hard-of-hearing students follow lectures.</p>
+      <ul>
+        <li>Turns speech into live text and picks out academic keywords.</li>
+        <li>Detects exam alerts and announcements, and summarizes each lecture.</li>
+        <li>Flutter app with live transcripts, keyword highlighting and lecture history.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="proj">
+    <summary><h3>Glove Z</h3><span class="yr">2025</span><span class="stack">ESP32, MAX30102, DHT22, AD8232, Flex sensors, Blynk, ThingSpeak, Flask, Twilio</span></summary>
+    <div class="body">
+      <p>A wearable health monitor for bedridden patients that also lets them signal their needs with hand gestures.</p>
+      <ul>
+        <li>Reads heart rate, SpO2, temperature and ECG on an ESP32.</li>
+        <li>Shows data live in Blynk, logs it to ThingSpeak, and sends WhatsApp alerts to caregivers through Twilio.</li>
+        <li>Six machine learning models classify Healthy, Warning and Critical states. A tuned Random Forest reached 96.8% test accuracy on a 60,000-sample synthetic dataset.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="proj">
+    <summary><h3>Advanced Farmhouse Security System</h3><span class="yr">2024</span><span class="stack">MicroPython, Express.js, WebSocket, Database</span></summary>
+    <div class="body">
+      <ul>
+        <li>Multi-sensor system that watches security events and environmental conditions.</li>
+        <li>Multimodal biometric authentication controls who can get in.</li>
+        <li>Dashboard shows sensor readings, security events and device status in real time.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="proj">
+    <summary><h3>LabAssist</h3><span class="yr">2024</span><span class="stack">React, Node.js, Express.js, MongoDB, REST APIs</span></summary>
+    <div class="body">
+      <ul>
+        <li>Laboratory management system that replaces paperwork with online workflows.</li>
+        <li>Equipment requests, approvals, login and lab data in one place.</li>
+        <li>Separate access for administrators, lab technicians, and students or researchers.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="proj">
+    <summary><h3>AI-Based Human Following Robot</h3><span class="yr">2023</span><span class="stack">Computer Vision, Robotics, Embedded Systems</span></summary>
+    <div class="body">
+      <ul>
+        <li>Detects a person, tracks them, and drives to follow while keeping a safe distance.</li>
+        <li>Explored obstacle detection and avoidance for safer navigation.</li>
+      </ul>
+    </div>
+  </details>
+</div></section>
+
+<section id="research"><div class="wrap">
+  <h2>Research</h2>
+
+  <div class="sub">Journal</div>
+  <div class="pub">
+    <span class="st">Under review, Q2 journal</span>
+    <h3>Glove Z: A Wearable IoT and Machine Learning-Based Real-Time Health Monitoring System for Bedridden Patients</h3>
+    <p>Journal of Sensors, 2026. <b>Md. Jalish Mahamud</b>, Md. Sakibul Alam Sakib, Saurav Chandra Das, Fahmida A. Antara, Sadia Enam.</p>
+  </div>
+
+  <div class="sub">Conferences</div>
+  <div class="pub">
+    <span class="st">Published</span>
+    <h3>Explainable Deep Learning and IoT Fusion Strategy for Early Indoor Fire Safety Monitoring</h3>
+    <p>2026 IEEE 2nd International Conference on Quantum Photonics, AI &amp; Networking (QPAIN), Chittagong, pp. 1–6. Md. Numanur Rahman, Tahzib Mahmud Rifat, <b>Md. Jalish Mahamud</b>, Suman Saha. <a href="https://doi.org/10.1109/QPAIN69676.2026.11546226">DOI</a></p>
+  </div>
+  <div class="pub">
+    <span class="st">Submitted</span>
+    <h3>Hear2Learn: A Context-Aware Real-Time Captioning Assistant for Deaf and Hard-of-Hearing Students</h3>
+    <p>29th International Conference on Computer and Information Technology (ICCIT 2026). <b>Md. Jalish Mahamud</b>, Md. Sakibul Alam Sakib, Rakib Hassan Dipu, Aar Raisatunnesa Hridika, Saurav Chandra Das.</p>
+  </div>
+
+  <div class="sub">Bachelor thesis</div>
+  <div class="pub">
+    <h3>CROSS-XFed: Cross-Dataset Federated and Explainable Intrusion Detection for Heterogeneous IoT Networks</h3>
+  </div>
+
+  <div class="sub">Interests</div>
+  <p><span class="tag">Embedded systems</span><span class="tag">Quantum computing</span><span class="tag">Internet of Things</span><span class="tag">Robotics</span><span class="tag">Human machine interface</span><span class="tag">Explainable AI</span></p>
+</div></section>
+
+<section id="education"><div class="wrap">
+  <h2>Education and leadership</h2>
+  <div class="cols">
+    <div>
+      <div class="row"><b>B.Sc. Engineering, Internet of Things and Robotics Engineering</b><span>University of Frontier Technology, Bangladesh · 2022–2026 · CGPA 3.45/4.00 · Dean’s List 2026</span></div>
+      <div class="row"><b>Higher Secondary Certificate</b><span>Govt. Tolaram College, Narayanganj · 2020 · GPA 5.00/5.00</span></div>
+      <div class="row"><b>Secondary School Certificate</b><span>Otra Secondary School, Wazirpur, Barishal · 2018 · GPA 5.00/5.00</span></div>
+      <div class="row"><b>Certifications</b><span>PCB Schematic and Layout Design (UFTB Career Center, 2025) · Foundation of Python (Ostad, 2024) · Cyber Security Training (Creative IT Institute, 2023) · 21st Century Core Employability Skills (Wadhwani Foundation, 2023)</span></div>
+    </div>
+    <div>
+      <div class="row"><b>President, Barishal Divisional Students Welfare Association</b><span>2024–2026 · Planned and ran student programs and coordinated volunteers.</span></div>
+      <div class="row"><b>Vice President, UFTB Robotics Club</b><span>2025–2026 · Organized technical workshops and coordinated club projects.</span></div>
+      <div class="row"><b>Executive Member, UFTB STEM Club</b><span>2023–2024 · Contributed to STEM initiatives and academic events.</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <h2>Skills</h2>
+  <dl class="skills cols">
+    <div>
+      <dt>AI and machine learning</dt><dd>Deep learning, Scikit-learn, Flask model deployment, model evaluation, explainable AI</dd>
+      <dt>Programming</dt><dd>Python, C, C++, Java, SQL (MySQL)</dd>
+    </div>
+    <div>
+      <dt>IoT and embedded systems</dt><dd>ESP32 and Arduino, sensor interfacing, hardware–software integration, WebSockets, real-time data streaming</dd>
+      <dt>Web, mobile and tools</dt><dd>HTML, CSS, Flutter, REST APIs, Node.js, LaTeX, Git and GitHub, VS Code</dd>
+    </div>
+  </dl>
+</div></section>
+</main>
+
+<div class="contact" id="contact"><div class="wrap">
+  <h2>Let’s work together</h2>
+  <p>I’m open to research collaborations, graduate study and engineering roles in IoT, embedded systems and machine learning.</p>
+  <div class="links">
+    <a class="btn primary" href="mailto:jalish.uftb@gmail.com">jalish.uftb@gmail.com</a>
+    <a class="btn" href="https://github.com/jalish-uftb">GitHub</a>
+    <!-- TODO: replace with your real LinkedIn and Google Scholar profile links -->
+    <a class="btn" href="https://www.linkedin.com/in/YOUR-LINKEDIN-NAME">LinkedIn</a>
+    <a class="btn" href="https://scholar.google.com/citations?user=YOUR-SCHOLAR-ID">Google Scholar</a>
+  </div>
+</div></div>
+<footer>© 2026 Md. Jalish Mahamud</footer>
+
+<script>
+// Animated ECG trace in the hero
+(function(){
+  var c=document.getElementById('trace'),x=c.getContext('2d'),W,H,t=0;
+  var still=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function size(){var r=c.getBoundingClientRect(),d=window.devicePixelRatio||1;W=r.width;H=r.height;c.width=W*d;c.height=H*d;x.setTransform(d,0,0,d,0,0)}
+  // One heartbeat cycle: returns amplitude for phase p in [0,1)
+  function beat(p){
+    if(p<.10)return .10*Math.sin(p/.10*Math.PI);          // P wave
+    if(p<.16)return 0;
+    if(p<.19)return -.12*Math.sin((p-.16)/.03*Math.PI);   // Q
+    if(p<.25)return Math.sin((p-.19)/.06*Math.PI);        // R spike
+    if(p<.29)return -.25*Math.sin((p-.25)/.04*Math.PI);   // S
+    if(p<.45)return 0;
+    if(p<.62)return .22*Math.sin((p-.45)/.17*Math.PI);    // T wave
+    return 0;
+  }
+  function draw(){
+    x.clearRect(0,0,W,H);
+    var mid=H*.62,amp=H*.52,period=260,sc=getComputedStyle(document.documentElement).getPropertyValue('--signal');
+    x.lineWidth=2.5;x.lineJoin='round';x.strokeStyle=sc;x.beginPath();
+    for(var i=0;i<=W;i+=2){
+      var p=(((i+t)%period)+period)%period/period;
+      var y=mid-beat(p)*amp;
+      i?x.lineTo(i,y):x.moveTo(i,y);
+    }
+    x.stroke();
+    if(!still){t+=1.6;requestAnimationFrame(draw)}
+  }
+  size();draw();
+  window.addEventListener('resize',function(){size();if(still)draw()});
+})();
+</script>
+</body>
+</html>
