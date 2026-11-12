@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Md. Jalish Mahamud – IoT & Robotics Engineer</title>
+<meta name="description" content="Portfolio of Md. Jalish Mahamud: IoT and robotics engineer building ESP32 sensor systems, machine learning pipelines, and explainable AI.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23082820'/><path d='M8 58h24l10-32 16 52 10-20h24' fill='none' stroke='%23E3AE55' stroke-width='7'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--board:#082820;--panel:#0D3329;--edge:#1E5846;--cu:#E3AE55;--cu2:#9A7632;--silk:#EEF3E8;--mut:#9DB8AD;--ok:#6FE3A5;
+--disp:'Chakra Petch','Segoe UI',system-ui,sans-serif;--body:'IBM Plex Sans','Segoe UI',system-ui,sans-serif;--mono:'IBM Plex Mono',ui-monospace,Consolas,monospace}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:radial-gradient(circle,#14463a 1.2px,transparent 1.7px) 0 0/28px 28px var(--board);color:var(--silk);font:400 1.05rem/1.65 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cu);outline-offset:3px;border-radius:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--disp);line-height:1.1}
+.mono{font-family:var(--mono)}
+
+nav{position:sticky;top:0;z-index:5;background:rgba(8,40,32,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--edge)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:56px}
+nav b{font:600 1.05rem var(--disp);white-space:nowrap}
+nav b i{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--ok);margin-right:9px;box-shadow:0 0 8px var(--ok)}
+nav ul{display:flex;gap:18px;list-style:none;padding:0;overflow-x:auto}
+nav li a{font:500 .85rem var(--mono);color:var(--mut);text-decoration:none;white-space:nowrap}
+nav li a:hover{color:var(--cu)}
+
+.hero{position:relative;overflow:hidden;padding:76px 0 72px;border-bottom:1px solid var(--edge)}
+#board{position:absolute;inset:0;width:100%;height:100%}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.35fr 1fr;gap:48px;align-items:center}
+.kicker{font:500 .95rem var(--mono);color:var(--cu);margin-bottom:14px}
+.hero h1{font-size:clamp(2.7rem,7.2vw,5.2rem);font-weight:700;letter-spacing:-.01em}
+.hero h1 span{color:var(--cu)}
+.hero p.sub{margin-top:20px;font-size:1.15rem;color:#D5E2DA;max-width:46ch}
+.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-block;padding:11px 20px;border:2px solid var(--silk);border-radius:4px;font:600 .95rem var(--mono);text-decoration:none;transition:background .15s,color .15s}
+.btn.p{background:var(--cu);border-color:var(--cu);color:var(--board)}
+.btn:hover{background:var(--silk);border-color:var(--silk);color:var(--board)}
+.tele{background:rgba(13,51,41,.94);border:1px solid var(--cu2);border-radius:6px;padding:20px;font-family:var(--mono)}
+.tele header{display:flex;justify-content:space-between;font-size:.8rem;color:var(--mut);border-bottom:1px dashed var(--edge);padding-bottom:12px;margin-bottom:6px}
+.tele header b{color:var(--ok);font-weight:500}
+.tele .r{display:flex;justify-content:space-between;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--edge)}
+.tele .r span{color:var(--mut);font-size:.88rem}
+.tele .r strong{font:600 1.9rem var(--disp);color:var(--silk)}
+.tele .r em{font-style:normal;font-size:.8rem;color:var(--cu);margin-left:4px}
+.tele footer{margin-top:12px;font-size:.78rem;color:var(--mut);line-height:1.5}
+.tele footer b{color:var(--ok);font-weight:500}
+
+section{padding:88px 0 0}
+h2{display:flex;align-items:center;gap:14px;font-size:clamp(1.8rem,4vw,2.4rem);font-weight:700;margin-bottom:30px}
+h2::before{content:"";width:16px;height:16px;border:3px solid var(--cu);border-radius:50%;background:var(--board);flex:none}
+h2::after{content:"";flex:1;height:2px;background:linear-gradient(90deg,var(--cu2),transparent)}
+.sub2{font:500 .9rem var(--mono);color:var(--cu);margin:30px 0 4px}
+
+.about{display:flex;gap:36px;align-items:flex-start}
+.about .badge{flex:none;width:190px;position:relative;padding:8px;border:1px solid var(--cu2);border-radius:4px;background:var(--panel)}
+.about .badge img{display:block;width:100%;height:230px;object-fit:cover;border-radius:2px}
+.lead{font-size:1.18rem;max-width:62ch}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:28px}
+.fact{background:var(--panel);border:1px solid var(--edge);border-radius:4px;padding:14px 16px}
+.fact b{display:block;font:700 1.6rem var(--disp);color:var(--cu)}
+.fact span{font:.82rem var(--mono);color:var(--mut)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:34px 22px}
+.card{position:relative;background:var(--panel);border:1px solid var(--edge);border-radius:4px;padding:24px 22px 20px}
+.card::before{content:"";position:absolute;left:18px;right:18px;top:-7px;height:7px;background:repeating-linear-gradient(90deg,var(--cu2) 0 7px,transparent 7px 16px)}
+.card.wide{grid-column:1/-1}
+.card .top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.card h3{font-size:1.4rem;font-weight:600}
+.card .yr{font:.85rem var(--mono);color:var(--cu)}
+.card p{color:#D5E2DA;margin-top:8px}
+.card ul{padding-left:18px;margin-top:10px;color:#D5E2DA}
+.card li{margin-bottom:6px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.chip{font:500 .78rem var(--mono);padding:2px 9px;border:1px solid var(--edge);border-radius:3px;color:var(--cu);background:var(--board)}
+
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;margin:20px 0 6px}
+.node{font:.82rem/1.35 var(--mono);padding:10px 12px;border:1px solid var(--cu2);border-radius:4px;background:var(--board)}
+.node b{display:block;color:var(--silk);font-weight:500}
+.node small{color:var(--mut);font-size:.76rem}
+.wire{width:30px;align-self:center;height:2px;background:repeating-linear-gradient(90deg,var(--cu) 0 6px,transparent 6px 12px);animation:fl 1s linear infinite}
+@keyframes fl{to{background-position:12px 0}}
+@keyframes flv{to{background-position:0 12px}}
+
+.item{display:grid;grid-template-columns:170px 1fr;gap:20px;padding:18px 0;border-top:1px solid var(--edge)}
+.item:last-child{border-bottom:1px solid var(--edge)}
+.item .when{font:.85rem var(--mono);color:var(--mut)}
+.item h3{font-size:1.18rem;font-weight:600;margin-bottom:4px}
+.item p{color:#D5E2DA;font-size:.98rem}
+.item p b{color:var(--silk)}
+.item a{color:var(--cu)}
+.st{display:inline-block;margin-bottom:8px;padding:1px 10px;border:1px solid var(--cu2);border-radius:3px;font:500 .76rem var(--mono);color:var(--cu)}
+.st.ok{border-color:var(--ok);color:var(--ok)}
+
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.skills div{background:var(--panel);border:1px solid var(--edge);border-radius:4px;padding:18px}
+.skills h3{font-size:1.05rem;margin-bottom:6px}
+.certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.cert{background:var(--panel);border:1px solid var(--edge);border-radius:4px;padding:16px 18px}
+.cert i{display:block;font:normal 500 .85rem var(--mono);color:var(--cu);margin-bottom:4px}
+.cert b{display:block;font-weight:600;line-height:1.35;margin-bottom:4px}
+.cert span{color:var(--mut);font-size:.93rem}
+
+.contact{margin-top:88px;padding:64px 0;background:var(--panel);border-top:2px solid var(--cu2)}
+.contact h2{margin-bottom:14px}
+.contact p{max-width:54ch;color:#D5E2DA}
+footer.f{padding:22px 0;text-align:center;font:.82rem var(--mono);color:var(--mut)}
+
+@media (max-width:820px){
+ .hero .wrap{grid-template-columns:1fr;gap:32px}
+ .about{flex-direction:column}
+ .item{grid-template-columns:1fr;gap:6px}
+ nav b{display:none}
+ .flow{flex-direction:column;align-items:flex-start}
+ .wire{width:2px;height:22px;margin-left:24px;background:repeating-linear-gradient(180deg,var(--cu) 0 6px,transparent 6px 12px);animation-name:flv}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.wire{animation:none}.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+ <b><i></i>jalish@uftb:~$</b>
+ <ul>
+  <li><a href="#about">About</a></li><li><a href="#projects">Projects</a></li><li><a href="#research">Research</a></li><li><a href="#education">Education</a></li><li><a href="#leadership">Leadership</a></li><li><a href="#skills">Skills</a></li><li><a href="#certifications">Certs</a></li><li><a href="#contact">Contact</a></li>
+ </ul>
+</div></nav>
+
+<header class="hero">
+ <canvas id="board" aria-hidden="true"></canvas>
+ <div class="wrap">
+  <div>
+   <div class="kicker">&gt; IoT &amp; Robotics Engineer</div>
+   <h1>Md. Jalish <span>Mahamud</span></h1>
+   <p class="sub">I design connected hardware end to end: ESP32 sensor nodes, cloud pipelines, machine learning models and the apps on top. Researching explainable, federated security for IoT networks.</p>
+   <div class="links">
+    <a class="btn p" href="#projects">View projects</a>
+    <a class="btn" href="CV_of_MD__JALISH_MAHAMUD.pdf">Download CV</a>
+    <a class="btn" href="https://github.com/jalish-uftb">GitHub</a>
+   </div>
+  </div>
+  <aside class="tele" aria-label="Simulated sensor readout">
+   <header><span>node: glove-z / esp32</span><b>● ONLINE</b></header>
+   <div class="r"><span>Heart rate</span><div><strong id="hr">72</strong><em>bpm</em></div></div>
+   <div class="r"><span>SpO2</span><div><strong id="sp">98</strong><em>%</em></div></div>
+   <div class="r"><span>Body temp</span><div><strong id="tp">36.7</strong><em>°C</em></div></div>
+   <footer>State: <b>HEALTHY</b> · cloud: Blynk + ThingSpeak<br>Simulated values, based on the sensors in my Glove Z project.</footer>
+  </aside>
+ </div>
+</header>
+
+<main>
+<section id="about"><div class="wrap">
+ <h2>About</h2>
+ <div class="about">
+  <!-- Put your photo in the same folder and name it photo.jpg -->
+  <div class="badge" id="badge"><img src="photo.jpg" alt="Portrait of Md. Jalish Mahamud" onerror="document.getElementById('badge').style.display='none'"></div>
+  <div>
+   <p class="lead">I recently graduated in Internet of Things and Robotics Engineering. I work across the whole stack of a connected device: sensors and microcontrollers, cloud and backend, machine learning, and the mobile app people actually use. I enjoy projects where a working prototype and a published paper come out of the same idea.</p>
+   <div class="facts">
+    <div class="fact"><b>3.45/4.00</b><span>CGPA, B.Sc. UFTB</span></div>
+    <div class="fact"><b>4</b><span>papers, 2 journal + 2 conference</span></div>
+    <div class="fact"><b>96.8%</b><span>Glove Z classifier accuracy</span></div>
+    <div class="fact"><b>Dean’s List</b><span>Level 4, Terms 1 and 2</span></div>
+   </div>
+  </div>
+ </div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+ <h2>Projects</h2>
+ <div class="grid">
+
+  <article class="card wide">
+   <div class="top"><h3>Glove Z: wearable health monitor</h3><span class="yr">2025</span></div>
+   <p>A wearable for bedridden patients that reads vital signs and lets them signal needs with hand gestures.</p>
+   <div class="flow" aria-label="System data flow">
+    <div class="node"><b>Sensors</b><small>MAX30102 · DHT22<br>AD8232 · Flex</small></div><div class="wire"></div>
+    <div class="node"><b>ESP32</b><small>Wi-Fi MCU</small></div><div class="wire"></div>
+    <div class="node"><b>Cloud</b><small>Blynk · ThingSpeak</small></div><div class="wire"></div>
+    <div class="node"><b>ML</b><small>Flask · Random Forest</small></div><div class="wire"></div>
+    <div class="node"><b>Alerts</b><small>Twilio · WhatsApp</small></div>
+   </div>
+   <ul>
+    <li>Real-time heart rate, SpO2, temperature, ECG and gesture-based need detection.</li>
+    <li>Six classifiers compared for Healthy, Warning and Critical states. A tuned Random Forest reached 96.8% test accuracy on a 60,000-sample synthetic dataset.</li>
+    <li>Live dashboards, cloud logging, automatic alerts and two-way caregiver messaging.</li>
+   </ul>
+   <div class="chips"><span class="chip">ESP32</span><span class="chip">Python</span><span class="chip">Flask</span><span class="chip">Machine Learning</span><span class="chip">Blynk</span><span class="chip">ThingSpeak</span><span class="chip">Twilio</span></div>
+  </article>
+
+  <article class="card">
+   <div class="top"><h3>Hear2Learn</h3><span class="yr">2026</span></div>
+   <p>Real-time captioning assistant for deaf and hard-of-hearing students.</p>
+   <ul>
+    <li>Speech-to-text with keyword extraction, exam-alert detection and lecture summaries.</li>
+    <li>Flutter app with live transcripts, highlighting and lecture history.</li>
+   </ul>
+   <div class="chips"><span class="chip">Python</span><span class="chip">Flask</span><span class="chip">Flutter</span><span class="chip">Firebase</span><span class="chip">NLP</span></div>
+  </article>
+
+  <article class="card">
+   <div class="top"><h3>Farmhouse Security System</h3><span class="yr">2024</span></div>
+   <p>Multi-sensor security and environment monitoring with biometric access.</p>
+   <ul>
+    <li>Multimodal biometric authentication for secure entry.</li>
+    <li>Real-time dashboard for conditions, security events and device status.</li>
+   </ul>
+   <div class="chips"><span class="chip">MicroPython</span><span class="chip">Express.js</span><span class="chip">WebSocket</span><span class="chip">Database</span></div>
+  </article>
+
+  <article class="card">
+   <div class="top"><h3>AI Human Following Robot</h3><span class="yr">2023</span></div>
+   <p>A robot that detects a person, tracks them and follows while keeping its distance.</p>
+   <ul>
+    <li>Tracking logic tied to motor control for real-time following.</li>
+    <li>Explored obstacle detection and avoidance.</li>
+   </ul>
+   <div class="chips"><span class="chip">Computer Vision</span><span class="chip">Robotics</span><span class="chip">Embedded</span></div>
+  </article>
+
+  <article class="card">
+   <div class="top"><h3>LabAssist</h3><span class="yr">2024</span></div>
+   <p>Laboratory management system that replaces paperwork with online workflows.</p>
+   <ul>
+    <li>Equipment requests, approvals, login and lab data in one place.</li>
+    <li>Role-based access for admins, technicians and students.</li>
+   </ul>
+   <div class="chips"><span class="chip">React</span><span class="chip">Node.js</span><span class="chip">MongoDB</span><span class="chip">REST</span></div>
+  </article>
+
+ </div>
+</div></section>
+
+<section id="research"><div class="wrap">
+ <h2>Research</h2>
+
+ <div class="sub2">// research experience</div>
+ <div>
+  <div class="item"><div class="when">Nov 2025 – present</div><div><h3>Research Assistant: CROSS-XFed</h3><p>Cross-dataset federated and explainable intrusion detection for heterogeneous IoT networks. Studying model generalization, data heterogeneity and privacy-preserving learning, with explainable AI to make detections trustworthy. Supervisor: Saurav Chandra Das, UFTB.</p></div></div>
+  <div class="item"><div class="when">Jul 2026 – present</div><div><h3>Research Assistant: NISQ quantum computing review</h3><p>Systematic review of NISQ algorithms, hardware–software co-design and empirical evaluation, covering benchmarking, hardware constraints and noise mitigation. Supervisor: Md. Moshiur Rahman, Software Engineering, UFTB.</p></div></div>
+ </div>
+
+ <div class="sub2">// journal papers</div>
+ <div>
+  <div class="item"><div class="when"><span class="st">Under review · Q2</span></div><div><h3>Glove Z: A Wearable IoT and Machine Learning-Based Real-Time Health Monitoring System for Bedridden Patients</h3><p>Journal of Sensors, 2026. <b>Md. Jalish Mahamud</b>, Md. Sakibul Alam Sakib, Saurav Chandra Das, Fahmida A. Antara, Sadia Enam.</p></div></div>
+  <div class="item"><div class="when"><span class="st">Under review · Q2</span></div><div><h3>CROSS-XFed: Cross-Dataset Federated and Explainable Intrusion Detection for Heterogeneous IoT Networks</h3><p>Engineering Reports, 2026. Md. Sakibul Alam Sakib, <b>Md. Jalish Mahamud</b>, Md. Mahabubur Rahman, Saurav Chandra Das.</p></div></div>
+ </div>
+
+ <div class="sub2">// conference papers</div>
+ <div>
+  <div class="item"><div class="when"><span class="st ok">Published</span></div><div><h3>Explainable Deep Learning and IoT Fusion Strategy for Early Indoor Fire Safety Monitoring</h3><p>2026 IEEE 2nd International Conference on Quantum Photonics, AI &amp; Networking (QPAIN), Chittagong, pp. 1–6. Md. Numanur Rahman, Tahzib Mahmud Rifat, <b>Md. Jalish Mahamud</b>, Suman Saha. <a href="https://doi.org/10.1109/QPAIN69676.2026.11546226">DOI</a></p></div></div>
+  <div class="item"><div class="when"><span class="st">Submitted</span></div><div><h3>Hear2Learn: A Context-Aware Real-Time Captioning Assistant for Deaf and Hard-of-Hearing Students</h3><p>29th International Conference on Computer and Information Technology (ICCIT 2026). <b>Md. Jalish Mahamud</b>, Md. Sakibul Alam Sakib, Rakib Hassan Dipu, Aar Raisatunnesa Hridika, Saurav Chandra Das.</p></div></div>
+ </div>
+
+ <div class="sub2">// interests</div>
+ <div class="chips"><span class="chip">Embedded systems</span><span class="chip">Quantum computing</span><span class="chip">Internet of Things</span><span class="chip">Robotics</span><span class="chip">Human machine interface</span><span class="chip">Explainable AI</span></div>
+</div></section>
+
+<section id="education"><div class="wrap">
+ <h2>Education</h2>
+ <div>
+  <div class="item"><div class="when">2022 – 2026</div><div><h3>B.Sc. Engineering, Internet of Things and Robotics Engineering</h3><p>University of Frontier Technology, Bangladesh · CGPA 3.45/4.00 · Dean’s List, Level 4 Terms 1 and 2 (2026)<br>Bachelor thesis: CROSS-XFed, cross-dataset federated and explainable intrusion detection for heterogeneous IoT networks.</p></div></div>
+  <div class="item"><div class="when">2020</div><div><h3>Higher Secondary Certificate</h3><p>Govt. Tolaram College, Narayanganj · GPA 5.00/5.00</p></div></div>
+  <div class="item"><div class="when">2018</div><div><h3>Secondary School Certificate</h3><p>Otra Secondary School, Wazirpur, Barishal · GPA 5.00/5.00</p></div></div>
+ </div>
+</div></section>
+
+<section id="leadership"><div class="wrap">
+ <h2>Leadership</h2>
+ <div>
+  <div class="item"><div class="when">2024 – 2026</div><div><h3>President, Barishal Divisional Students Welfare Association</h3><p>Planned and ran student programs and coordinated volunteers and events.</p></div></div>
+  <div class="item"><div class="when">2025 – 2026</div><div><h3>Vice President, UFTB Robotics Club</h3><p>Organized technical workshops and coordinated projects among club members.</p></div></div>
+  <div class="item"><div class="when">2023 – 2024</div><div><h3>Executive Member, UFTB STEM Club</h3><p>Contributed to STEM initiatives and academic events.</p></div></div>
+ </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+ <h2>Skills</h2>
+ <div class="skills">
+  <div><h3>IoT and embedded</h3><div class="chips"><span class="chip">ESP32</span><span class="chip">Arduino</span><span class="chip">MicroPython</span><span class="chip">Sensor interfacing</span><span class="chip">HW–SW integration</span><span class="chip">WebSockets</span><span class="chip">Real-time streaming</span></div></div>
+  <div><h3>AI and machine learning</h3><div class="chips"><span class="chip">Deep learning</span><span class="chip">Scikit-learn</span><span class="chip">Flask ML deployment</span><span class="chip">Model evaluation</span><span class="chip">Explainable AI</span></div></div>
+  <div><h3>Programming</h3><div class="chips"><span class="chip">Python</span><span class="chip">C</span><span class="chip">C++</span><span class="chip">Java</span><span class="chip">SQL (MySQL)</span></div></div>
+  <div><h3>Web, mobile and tools</h3><div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">Flutter</span><span class="chip">REST APIs</span><span class="chip">Node.js</span><span class="chip">LaTeX</span><span class="chip">Git and GitHub</span><span class="chip">VS Code</span></div></div>
+  <div><h3>Languages</h3><div class="chips"><span class="chip">Bengali: native</span><span class="chip">English: excellent</span></div></div>
+ </div>
+</div></section>
+
+<section id="certifications"><div class="wrap">
+ <h2>Certifications</h2>
+ <div class="certs">
+  <div class="cert"><i>2025</i><b>Industry-Standard PCB Schematic and Layout Design</b><span>UFTB Career Center</span></div>
+  <div class="cert"><i>2024</i><b>Foundation of Python</b><span>Ostad</span></div>
+  <div class="cert"><i>2023</i><b>Cyber Security Training Program</b><span>Creative IT Institute</span></div>
+  <div class="cert"><i>2023</i><b>Job Ready Certification: 21st Century Core Employability Skills Program</b><span>Wadhwani Foundation</span></div>
+ </div>
+</div></section>
+</main>
+
+<div class="contact" id="contact"><div class="wrap">
+ <h2>Let’s build something</h2>
+ <p>Open to research collaborations, graduate study and engineering roles in IoT, embedded systems and machine learning.</p>
+ <div class="links">
+  <a class="btn p" href="mailto:jalish.uftb@gmail.com">jalish.uftb@gmail.com</a>
+  <a class="btn" href="https://github.com/jalish-uftb">GitHub</a>
+  <a class="btn" href="https://www.linkedin.com/in/md-jalish-mahamud-5b4063249">LinkedIn</a>
+  <a class="btn" href="https://scholar.google.com/citations?user=VNQnDEcAAAAJ&amp;hl=en">Google Scholar</a>
+ </div>
+</div></div>
+<footer class="f">© 2026 Md. Jalish Mahamud · hand-built with plain HTML, CSS and JavaScript</footer>
+
+<script>
+(function(){
+ var rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ var c=document.getElementById('board'),x=c.getContext('2d'),W,H,paths=[];
+ function rnd(s){return function(){s=(s*16807)%2147483647;return s/2147483647}}
+ function build(){
+  var r=c.parentNode.getBoundingClientRect(),d=window.devicePixelRatio||1;
+  W=r.width;H=r.height;c.width=W*d;c.height=H*d;x.setTransform(d,0,0,d,0,0);
+  var R=rnd(42),n=Math.max(8,Math.round(H/44));paths=[];
+  for(var i=0;i<n;i++){
+   var y=(i+.5)*H/n,dir=i%2?-1:1,sx=dir>0?0:W;
+   var x1=sx+dir*W*(.06+R()*.16),dy=(R()<.5?-1:1)*(16+R()*36),x2=x1+dir*Math.abs(dy),x3=x2+dir*W*(.06+R()*.14);
+   var p=[[sx,y],[x1,y],[x2,y+dy],[x3,y+dy]],segs=[],len=0;
+   for(var k=1;k<4;k++){var l=Math.hypot(p[k][0]-p[k-1][0],p[k][1]-p[k-1][1]);segs.push(l);len+=l}
+   paths.push({p:p,segs:segs,len:len,t:R()*len,v:.7+R()*1.1});
+  }
+ }
+ function at(o,t){var k=0;while(k<2&&t>o.segs[k]){t-=o.segs[k];k++}var a=o.p[k],b=o.p[k+1],f=Math.min(t/o.segs[k],1);return[a[0]+(b[0]-a[0])*f,a[1]+(b[1]-a[1])*f]}
+ function draw(){
+  x.clearRect(0,0,W,H);
+  paths.forEach(function(o){
+   x.strokeStyle='rgba(227,174,85,.22)';x.lineWidth=2;x.beginPath();
+   o.p.forEach(function(q,i){i?x.lineTo(q[0],q[1]):x.moveTo(q[0],q[1])});x.stroke();
+   var e=o.p[3];x.beginPath();x.arc(e[0],e[1],5,0,7);x.strokeStyle='rgba(227,174,85,.45)';x.stroke();
+   var q=at(o,o.t);x.beginPath();x.arc(q[0],q[1],3,0,7);x.fillStyle='#FFD98A';x.shadowColor='#E3AE55';x.shadowBlur=10;x.fill();x.shadowBlur=0;
+   if(!rm){o.t+=o.v;if(o.t>=o.len)o.t=0}
+  });
+  if(!rm)requestAnimationFrame(draw);
+ }
+ build();draw();
+ window.addEventListener('resize',function(){build();if(rm)draw()});
+
+ var hr=72,sp=98,tp=36.7;
+ function set(i,v){document.getElementById(i).textContent=v}
+ function clamp(v,a,b){return Math.max(a,Math.min(b,v))}
+ if(!rm)setInterval(function(){
+  hr=clamp(hr+Math.round((Math.random()-.5)*4),64,84);
+  sp=clamp(sp+(Math.random()<.3?(Math.random()<.5?-1:1):0),96,99);
+  tp=clamp(tp+(Math.random()-.5)*.12,36.4,37);
+  set('hr',hr);set('sp',sp);set('tp',tp.toFixed(1));
+ },1200);
+})();
+</script>
+</body>
+</html>
